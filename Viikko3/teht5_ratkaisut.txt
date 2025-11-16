@@ -1,0 +1,23 @@
+-- a) Minkä nimisiä osastoja tietokannassa on?
+SELECT DISTINCT dept_name FROM departments;
+
+-- b) Mitä nimikkeitä (title) tietokannassa on, yksi kutakin?
+SELECT DISTINCT title FROM titles;
+
+-- c) Mikä on suurin palkka?
+SELECT MAX(salary) FROM salaries;
+
+-- c) Mikä on pienin palkka?
+SELECT MIN(salary) FROM salaries;
+
+-- d) Mikä on keskimääräinen palkka?
+SELECT AVG(salary)  FROM salaries;
+
+-- e) Tulosta kaikki työntekijät, joiden sukunimi on Facello.
+SELECT * FROM employees WHERE last_name='Facello';
+
+-- f) Kuinka moni työntekijä on syntynyt 1950-luvulla?
+SELECT COUNT(*) FROM employees WHERE birth_date >= '1950-01-01' AND birth_date <= '1959-12-31';
+
+-- g) Montako miestä ja montako naista työntekijöissä on? 
+SELECT gender, COUNT(*) FROM employees GROUP BY gender;

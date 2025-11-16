@@ -1,0 +1,11 @@
+--Tehdään owner-taulu
+CREATE TABLE owner (idOwner INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(20));
+
+--Lisätään pet-tauluun idOwner ja foreign key fkOwner.
+ALTER TABLE pet ADD idOwner INT, ADD CONSTRAINT fkOwner FOREIGN KEY (idOwner) REFERENCES owner(idOwner);
+
+--Tulostaa owner-taulun 
+DESC owner;
+
+--Tulostaa pet-taulun
+DESC pet;
